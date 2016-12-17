@@ -1,0 +1,64 @@
+/*
+SQLyog Ultimate v11.24 (32 bit)
+MySQL - 5.5.24-log : Database - happyaccount
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`happyaccount` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `happyaccount`;
+
+/*Table structure for table `ci_account` */
+
+CREATE TABLE `ci_account` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '账户id',
+  `account_name` varchar(100) NOT NULL COMMENT '账户名称',
+  `balance` float unsigned NOT NULL COMMENT '账户余额',
+  `create_time` char(30) DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+/*Data for the table `ci_account` */
+
+/*Table structure for table `ci_journal` */
+
+CREATE TABLE `ci_journal` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '流水id',
+  `resource_account_id` int(11) DEFAULT NULL COMMENT '源账户id',
+  `op_type` tinyint(2) unsigned NOT NULL COMMENT '交易类型：1、收入；2、支出；3、转账',
+  `amount` varchar(50) NOT NULL COMMENT '交易金额',
+  `destination_account` int(11) DEFAULT NULL COMMENT '目标账户id',
+  `desc` varchar(50) DEFAULT NULL COMMENT '用途描述',
+  `create_time` char(20) DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+/*Data for the table `ci_journal` */
+
+/*Table structure for table `ci_user` */
+
+CREATE TABLE `ci_user` (
+  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `user_name` char(30) NOT NULL COMMENT '用户名',
+  `password` char(50) NOT NULL COMMENT '用户密码',
+  `status` tinyint(2) unsigned NOT NULL DEFAULT '1' COMMENT '用户状态：0、不可用；1、可用',
+  `create_time` char(20) DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `ci_user` */
+
+insert  into `ci_user`(`user_id`,`user_name`,`password`,`status`,`create_time`) values (1,'admin','96e79218965eb72c92a549dd5a330112',1,'1429254010');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

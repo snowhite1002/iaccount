@@ -1,0 +1,9 @@
+#RewriteEngine on
+#RewriteCond $1 !^(index\.php|public|data|inc|install|robots\.txt)
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+
+<IfModule mod_rewrite.c>
+        RewriteEngine on
+        RewriteCond $1 !^(index\.php|phpinfo\.php|images|uploadfiles|js|css|data|public|flash|robots\.txt)
+        RewriteRule ^(.*)$ /iaccount/index.php?/$1 [L]
+</IfModule>

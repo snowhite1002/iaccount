@@ -1,0 +1,135 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+body {
+	font-family: "楷体"; 
+}
+
+input {
+	height: 28px;
+	border-radius: 3px;
+	border: solid 1px rgba(221, 92, 13, 0.47);
+	transition: box-shadow 0.30s ease-in-out;
+}
+
+select {
+	font-family: "楷体";
+	font-size: 1em;
+	line-height: 0.5em;
+	height:28px;
+	border-radius:3px;
+	border:solid 1px rgba(221, 92, 13, 0.47);
+	transition: box-shadow 0.30s ease-in-out;
+}
+
+table {
+	margin: 20px auto;
+	width: 550px;
+	align: center;
+	border: solid 1px rgba(221, 92, 13, 0.47);
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th, td {
+	border: solid 1px rgba(221, 92, 13, 0.47);
+	text-align: center;
+}
+
+input:focus{
+	box-shadow:0 0 8px #FCBC7C;
+}
+
+.button {
+	border: none;
+	background-color: #DD5C0D;
+	color: #333;
+	padding: 10px 18px;
+	border-radius: 3px;
+	box-shadow: 0 2px 8px #333;
+	text-shadow: 1px -1px 3px #EAEAEA;
+	cursor: pointer;
+}
+
+.main {
+	margin: 10% auto 0 auto;
+	border: solid .8em #DD5C0D;
+	width: 700px;
+	border-radius: 11em/3em 11em;
+	box-shadow: 0 2px 64px #938D8A, inset 2px 2px 8px #181818;
+	padding: 0 3em 5em 3em;
+}
+
+.title {
+	line-height: 2em;
+  	text-shadow: -1px -1px 2px #4D4747;
+  	margin-top: 1em;
+}
+
+.total_balance {
+	margin: auto 5px;
+	font-size:1.2em;
+	text-indent:2em;
+	font-weight: normal;
+}
+strong {
+	color:#DD5C0D;
+}
+
+.main > dl {
+	margin-top:1em;
+}
+.main  dd {
+	text-indent: 2em;
+	line-height: 2em;
+}
+div .bottom {
+	margin-top:2em;
+}
+
+dialog {
+	position:fixed;
+	width:600px;
+	left:50%;
+	margin-left:-300px;
+	top:20%;
+	border:solid 1px #ccc;
+	padding:2em;
+  	border-radius: 5px;
+  	box-shadow: 0 2px 64px #938D8A;
+}
+
+.form .form-title {  
+	text-align: center;
+	margin-bottom: 1.2em;
+	font-size: 1.6em;
+}
+
+.form .form-item {
+	height:1.8em;
+	margin-bottom:1em; 
+	display:flex; 
+	padding:0 1em;
+}
+
+.form .form-item label {
+	width:5em;
+}
+
+.form .form-item input {
+	flex:1;
+}
+
+.form .form-item button {
+  margin-right: 2em;
+}
+
+.form .form-item .last {
+	margin-top:2em
+}
